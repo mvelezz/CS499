@@ -24,16 +24,18 @@ def getOptions():
 
 
 def menu():
-    memHolder = member.Member()
     choice = getOptions()
     teeTimes = {}
-    teeTimes["6:00"] = memHolder.memberNumber
-    teeTimes["7:00"] = memHolder.memberNumber
-    teeTimes["8:00"] = memHolder.memberNumber
+    memHolder = member.Member
+    teeTimes["6:00"] = memHolder
+    teeTimes["7:00"] = memHolder
+    teeTimes["8:00"] = memHolder
     while True:
         if choice == '1':
             for time in teeTimes:
-                print(time, teeTimes[time].memberNumber)
+                memInfo = teeTimes[time]
+
+                print(time, memInfo.memberNumber, memInfo.firstName, memInfo.lastName)
             teeTimeChoice = input("Which tee time would you like to book?")
             print("Which member would you like to add to the tee time?")
             for membersAvailable in range(len(memberDatabase)):
@@ -63,7 +65,7 @@ def menu():
             choice = getOptions()
         elif choice == '3':
             for i in range(len(memberDatabase)):
-                print(memberDatabase[i].firstName)
+                print(memberDatabase[i].memberNumber, memberDatabase[i].firstName, memberDatabase[i].lastName, memberDatabase[i].memberStatus )
             choice = getOptions()
         elif choice == '4':
             break
