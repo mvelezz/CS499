@@ -8,8 +8,9 @@ from pymongo.server_api import ServerApi
 def get_database():
     # Provide the mongodb atlas url to connect python to mongodb using pymongo
 
-    username = urllib.parse.quote_plus('miahvelez')
-    password = urllib.parse.quote_plus('Password1')
+    # Passwords deleted from repository for security purposes
+    username = urllib.parse.quote_plus('')
+    password = urllib.parse.quote_plus('')
     CONNECTION_STRING = "mongodb+srv://"+username+":" + password + "@cluster0.dpolx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
     # Create a new client and connect to the server
